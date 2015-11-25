@@ -1,0 +1,19 @@
+fuse_nfs_ref=841a910  
+libnfs_version=1.9.8
+
+libnfs_download_url=https://github.com/sahlberg/libnfs/archive/libnfs-${libnfs_version}.tar.gz
+
+cd /tmp
+curl -L ${libnfs_download_url} | tar xz && cd libnfs*
+./bootstrap
+./configure --prefix=/var/vcap/app
+make && make install
+
+cd /tmp
+git clone https://github.com/sahlberg/fuse-nfs.git
+cd fuse-nfs && git checkout ${fuse_nfs_ref}
+autoreconf -vif
+export CPPFLAGS='-I/var/vcap/app/include/'
+export LDFLAGS='-L/var/vcap/app/lib'
+./configure --prefix=/var/vcap/app
+make && make install
