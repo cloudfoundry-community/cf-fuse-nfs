@@ -25,4 +25,4 @@ This can be achieved with a wrapper script or with a pre-start script in [`.prof
 ### Note about using NFS with non root users
 By default, most NFS servers will only allow access from clients that are using a system port (i.e. a port < 1024).
 Since these ports by default can only be used by the root user this will prevent non-root users from conencting to the NFS server or mounting the filesystem.
-On Linux NFS servers this check can be disabled by adding the "insecure" keyword to the /etc/exports file.
+On Linux NFS servers this check can be disabled by adding the `insecure` keyword to the /etc/exports file.
