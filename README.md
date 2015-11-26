@@ -16,7 +16,7 @@ The resulting files can be found in `./target`
 ## Using the binaries
 Mounting a NFS share from for use by your application can be done by running:
 ```
-/home/vcap/app/bin/fuse-nfs -n nfs://{host}/{share} -m /home/vcap/app/nfs
+/home/vcap/app/bin/fuse-nfs -n "nfs://{host}/{share}?uid={server_uid}&gid={server_gid}" -m /home/vcap/app/nfs
 ```
 
 The above command should be invoked before the application is started.
