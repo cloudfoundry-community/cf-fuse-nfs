@@ -20,7 +20,7 @@ Mounting a NFS share from for use by your application can be done by running:
 ```
 
 The above command should be invoked before the application is started.
-This can be achieved with a wrapper script or with a pre-start script in [`.profiled.d`](https://devcenter.heroku.com/articles/profiled).
+This can be achieved with a wrapper script or with a pre-start script in [`.profile.d`](https://devcenter.heroku.com/articles/profiled).
 
 ### Note about using NFS with non root users
 By default, most NFS servers will only allow access from clients that are using a system port (i.e. a port < 1024).
